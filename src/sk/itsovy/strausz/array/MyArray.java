@@ -148,7 +148,7 @@ public class MyArray {
        }
        if(c > a && c > b){
             result[1] = c;
-       }
+       }                                            //vypise min aj max
 
        if(a < b && a < c){
             result[0]=a;
@@ -163,6 +163,36 @@ public class MyArray {
 
         System.out.println(result[0]+ " " + result[1]);
         return result;
+    }
+
+
+    public static void test6(){
+        int [] field= new int[10];
+
+        int [] field2= new int[10];
+
+
+        for(int i=0; i <field.length; i++){
+
+            field[i]= (int)Math.pow(2,i);           // mocniny dvojky
+
+        }
+        for (int i=0; i<field.length; i++){
+            System.out.print(field[i] + " ");
+        }
+        System.out.println();
+
+
+
+        for(int i=0;i< 10; i++){
+            field2[9-i]=field[i];
+
+        }
+        for (int i=0; i<field.length; i++){
+            System.out.print(field2[i] + " ");         //mocniny dvojky naopak
+        }
+        System.out.println();
+
     }
 
 
