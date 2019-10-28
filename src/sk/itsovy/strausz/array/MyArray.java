@@ -1,5 +1,8 @@
 package sk.itsovy.strausz.array;
 
+import sk.itsovy.strausz.school.Student;
+import sk.itsovy.strausz.school.Teacher;
+
 import java.util.Random;
 
 public class MyArray {
@@ -114,81 +117,77 @@ public class MyArray {
     }
 
 
-    public static void test4(){
-        int arr[] = new int [19];
+    public static void test4() {
+        int arr[] = new int[19];
 
-        arr[0]=1;
-        arr[1]=1;
+        arr[0] = 1;
+        arr[1] = 1;
 
 
-        for(int i=2; i<arr.length; i++){
-            arr[i] = arr[i-1] + arr[i-2];
-                                                   //fibonaciho postupnost
+        for (int i = 2; i < arr.length; i++) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+            //fibonaciho postupnost
         }
-        for(int i =0; i<arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-
 
 
     }
 
 
-
-
-    public static int[] minmax ( int a, int b, int c){
+    public static int[] minmax(int a, int b, int c) {
         int[] result = new int[2];
 
 
         if (a > b && a > c) {
             result[1] = a;
         }
-       if(b > a && b > c){
-            result[1]= b;
-       }
-       if(c > a && c > b){
+        if (b > a && b > c) {
+            result[1] = b;
+        }
+        if (c > a && c > b) {
             result[1] = c;
-       }                                            //vypise min aj max
+        }                                            //vypise min aj max
 
-       if(a < b && a < c){
-            result[0]=a;
-       }
-       if( c < a && c < b){
-            result[0]=c;
+        if (a < b && a < c) {
+            result[0] = a;
+        }
+        if (c < a && c < b) {
+            result[0] = c;
 
-       }
-       if(b < a && b < c){
-            result[0]=b;
-       }
+        }
+        if (b < a && b < c) {
+            result[0] = b;
+        }
 
-        System.out.println(result[0]+ " " + result[1]);
+        System.out.println(result[0] + " " + result[1]);
         return result;
     }
 
 
-    public static void test6(){
-        int [] field= new int[10];
+    public static void test6() {
+        int[] field = new int[10];
 
-        int [] field2= new int[10];
+        int[] field2 = new int[10];
 
 
-        for(int i=0; i <field.length; i++){
+        for (int i = 0; i < field.length; i++) {
 
-            field[i]= (int)Math.pow(2,i);           // mocniny dvojky
+            field[i] = (int) Math.pow(2, i);           // mocniny dvojky
 
         }
-        for (int i=0; i<field.length; i++){
+        for (int i = 0; i < field.length; i++) {
             System.out.print(field[i] + " ");
         }
         System.out.println();
 
 
-
-        for(int i=0;i< 10; i++){
-            field2[9-i]=field[i];
+        for (int i = 0; i < 10; i++) {
+            field2[9 - i] = field[i];
 
         }
-        for (int i=0; i<field.length; i++){
+        for (int i = 0; i < field.length; i++) {
             System.out.print(field2[i] + " ");         //mocniny dvojky naopak
         }
         System.out.println();
@@ -196,6 +195,129 @@ public class MyArray {
     }
 
 
+    public static void test7() {
+
+
+        int[] b = {12, 38, 47, 5, 29, 16, 10, 112, 48, 65, 75, 9};
+
+        int size = 0;
+
+        for (int i = 0; i < b.length; i++) {
+            if (b[i] % 3 != 0)
+                size++;
+        }
+
+        int[] b3n = new int[size];            //vypise cisla delitelne 3 z pola b
+
+        int j = 0;
+
+        for (int i = 0; i < b.length; i++) {
+            if (b[i] % 3 != 0) {
+                b3n[j] = b[i];
+                j++;
+            }
+        }
+        for (int value : b3n) {
+            System.out.print(value + " ");
+        }
+
+        System.out.println();
+
+        int[] c = new int[b.length];
+        for (int i = 0; i < b.length; i++) {        // skopiruje B
+            c[i] = b[i];
+        }
+        for (int i = 0; i < b.length; i++) {
+            System.out.print(c[i] + " ");
+        }
+
+        // alebo
+//        for(int value:c){
+//            System.out.print(value + " ");
+//        }
+
+//        int c [];
+//        c= b.clone();                      //2. sposob ako skopirovat B
+
+
+//        System.arraycopy(b,0,c,0,b.length); // 3. sposob ako skopirovat B
+    }
+
+
+    public static void test8() {
+        Random rnd = new Random();
+        int[] a = new int[20];
+
+        for (int i = 0; i < a.length; i++) {
+
+            int count = 0;
+            int temp = rnd.nextInt(50) + 1;
+
+            for (int j = 0; j < i; j++) {                       //nahodne cisla ktore sa nesmu opakovat
+                if (temp == a[j]) {
+                    count = 1;
+                    break;
+                }
+            }
+            if (count == 0)
+                a[i] = temp;
+            else
+                i--;
+        }
+        for (int i = 1; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+
+    }
+
+
+    public static void test9() {
+        Random rnd = new Random();
+
+        Student[] arr = new Student[5];
+        for (int i = 0; i < arr.length; i++) {
+
+            arr[i] = new Student("Student" + i, rnd.nextInt(68) + 10, "1N");
+        }                                                         // vytvori 5. studentov
+
+        for (Student temp : arr) {
+            System.out.println(temp.getName() + " " + temp.getAge());
+        }
+
+        System.out.println();
+
+        for (Student temp : arr) {
+            if (temp.getAge() < 18) {
+                System.out.println(temp.getName() + " " + temp.getAge());   // vypise neplnoletych
+            }
+
+
+        }
+        System.out.println();
+
+        Teacher[] arr1 = new Teacher[8];
+        for (int i = 0; i < arr1.length; i++) {
+
+            arr1[i] = new Teacher("Teacher " + i, rnd.nextInt(80) + 20, rnd.nextInt(500) + 500);
+        }                                                            //vytvori 8. ucitelov
+
+        for (Teacher temp1 : arr1) {
+            System.out.println(temp1.getName() + " " + temp1.getAge() + " " + temp1.getSalary());
+        }
+
+        System.out.println();
+
+        for (Teacher temp1 : arr1) {
+            if(temp1.getSalary() >= 765 &&  temp1.getSalary() <=935){
+                System.out.println(temp1.getName() + " " + temp1.getAge() + " " + temp1.getSalary());
+            }
+        }
+
+
+    }
 
 }
+
+
+
 

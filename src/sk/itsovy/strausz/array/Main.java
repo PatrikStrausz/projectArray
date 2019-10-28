@@ -11,7 +11,10 @@ public class Main {
 //        int res[]= MyArray.minmax(7,10,8);
 
 
-          MyArray.test6();
+         // MyArray.test6();
+       // MyArray.test7();7
+      //  MyArray.test8();
+        MyArray.test9();
 
     }
 }
