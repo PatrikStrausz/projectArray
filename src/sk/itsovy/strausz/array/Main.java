@@ -14,7 +14,7 @@ public class Main {
          // MyArray.test6();
        // MyArray.test7();7
       //  MyArray.test8();
-        MyArray.test9();
-
+//        MyArray.test9();
+         MyArray.test10();
     }
 }

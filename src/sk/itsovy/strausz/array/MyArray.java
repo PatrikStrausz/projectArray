@@ -308,7 +308,7 @@ public class MyArray {
         System.out.println();
 
         for (Teacher temp1 : arr1) {
-            if(temp1.getSalary() >= 765 &&  temp1.getSalary() <=935){
+            if (temp1.getSalary() >= 765 && temp1.getSalary() <= 935) {
                 System.out.println(temp1.getName() + " " + temp1.getAge() + " " + temp1.getSalary());
             }
         }
@@ -316,7 +316,87 @@ public class MyArray {
 
     }
 
+    public static void test10() {
+        String[] names = {"Ivan", "Peter", "Erik", "Zuzana", "Patrik", "Viliam"};
+
+        for (int i = 0; i < names.length; i++) {
+            System.out.print(names[i] + " ");       //Vypise vsetky mena
+        }
+        System.out.println();
+
+        //alebo
+
+//        for (String name:names){
+//            System.out.print(name +" ");
+//        }
+
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].contains("a") || names[i].contains("A")) {
+                System.out.print(names[i] + " ");                         // v mene  sa nachadza "A"
+            }
+        }
+        System.out.println();
+
+
+        int max = names[0].length();
+
+        for (int i = 1; i < names.length; i++) {
+            if (names[i].length() > max) {
+                max = names[i].length();               //vypise najdlhsie mena
+            }
+
+        }
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].length() == max) {
+                System.out.print(names[i] + " ");
+            }
+        }
+
+        System.out.println();
+
+        int min = names[0].length();
+
+        for (int i = 1; i < names.length; i++) {
+            if (names[i].length() < min) {
+                min = names[i].length();                  //vypise najkratsie mena
+            }
+
+        }
+        for (int i = 0; i < names.length; i++) {
+            if (names[i].length() == min) {
+                System.out.print(names[i] + " ");
+            }
+        }
+
+        System.out.println();
+
+        for (int i = 0; i < names.length; i++) {
+            System.out.print(names[i].toUpperCase() + " ");       //Vypise vsetky mena velkymi pismenami
+        }
+        System.out.println();
+
+
+        for (int i = 0; i < names.length; i++) {
+            String name = names[i];
+            for (int j = 0; j < name.length(); j++) {
+                String z = String.valueOf(name.charAt(j));   //Vypise vsetky mena bez samohlasok
+                if ("AEIOUYaeiouy".contains(z)) {
+                    System.out.print(".");
+                } else {
+                    System.out.print(z);
+                }
+            }
+            System.out.print("  ");
+
+        }
+
+
+    }
+
+
 }
+
+
 
 
 
