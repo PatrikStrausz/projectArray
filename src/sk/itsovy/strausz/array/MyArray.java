@@ -4,6 +4,7 @@ import sk.itsovy.strausz.school.Student;
 import sk.itsovy.strausz.school.Teacher;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class MyArray {
 
@@ -360,7 +361,6 @@ public class MyArray {
             if (names[i].length() < min) {
                 min = names[i].length();                  //vypise najkratsie mena
             }
-
         }
         for (int i = 0; i < names.length; i++) {
             if (names[i].length() == min) {
@@ -393,7 +393,22 @@ public class MyArray {
 
     }
 
+public static void test11(){
+    Scanner scanner = new Scanner(System.in);
+    String name = " dss";
+    System.out.println("Enter a word:");
+    name = scanner.nextLine();
 
+    int word= name.length();
+
+
+    for(int i = word-1; i>=0; i--){                  //prijme slovo z klavesnice a vypise ho naopak
+        name=name.trim();                             // vymaze zbytocne medzery
+        System.out.print(name.charAt(i));
+
+    }
+
+}
 }
 
 
