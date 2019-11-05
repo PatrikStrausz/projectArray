@@ -407,8 +407,126 @@ public static void test11(){
         System.out.print(name.charAt(i));
 
     }
+ }
 
-}
+ public static void test12(){
+
+        int []a = {17,0,-2,13,68,103,21,55,1};
+
+        int n= a.length;
+        for(int i = 0; i<=n-1; i++){
+            for (int j = i+1; j <n; j++){          // zoradi cisla vzostupne
+                if(a[i] > a[j]){
+                    int temp= a[i];
+                    a[i]=a[j];
+                    a[j]= temp;
+
+
+                }
+
+            }
+            System.out.print(a[i]+ " ");
+        }
+ }
+
+
+ public static void test13(){
+        Random rnd = new Random();
+        int a[]= new int[20];
+
+     for (int i = 0; i < a.length; i++) {
+
+         int count = 0;
+         int temp = rnd.nextInt(80) + 1;
+
+
+         for (int j = 0; j < i; j++) {
+             if (temp == a[j]) {
+                 count = 1;
+                 break;
+             }
+         }
+         if (count == 0)
+             a[i] = temp;
+         else
+             i--;
+     }
+     for (int i = 0; i < a.length; i++) {  //vygeneruje 20 nahodnych cisel, ktore sa nesmu opakovat a potom ich zoradi vzostupne
+         System.out.print(a[i] + " ");
+     }
+
+     System.out.println();
+
+     int n= a.length; //koniec pola "n"
+     for(int i = 0; i<=n-1; i++){
+         for (int j = i+1; j <n; j++){
+             if(a[i] > a[j]){
+                 int temp= a[i];
+                 a[i]=a[j];
+                 a[j]= temp;
+             }
+
+         }
+         System.out.print(a[i]+ " ");
+     }
+ }
+
+
+ public static void test14() {
+     String[] a = {"Monika", "Yelizaveta", "Nikoleta", "Denis", "Damian", "Jakub", "Laco",
+             "Vlado", "Martin", "Miro", "Patrik", "Artem", "Tibor", "Jakub", "Jakub","Peto"};
+
+
+     for (int i = 0; i < a.length; ++i) {
+         for (int j = i + 1; j < a.length; ++j) {   // zoradi mena abecedne
+             if (a[i].compareTo(a[j]) > 0) {
+                 String temp = a[i];
+                 a[i] = a[j];
+                 a[j] = temp;
+             }
+         }
+
+         System.out.print(a[i] + " ");
+     }
+
+     System.out.println();
+
+     for (int i = a.length-1; i >= 0; i--) {
+         for (int j = i + 1; j < a.length; ++j) {   // zoradi mena abecedne naopak
+             if (a[i].compareTo(a[j]) > 0) {
+                 String temp = a[i];
+                 a[i] = a[j];
+                 a[j] = temp;
+             }
+         }
+
+         System.out.print(a[i] + " ");
+     }
+
+
+     }
+
+
+ public static void test15(){ //bublinkova metoda
+       int[] a = { 12,7,14,4,10};
+int n = a.length;
+       for(int i=0; i<n-1; i++){
+           for(int j=0; j<n-1-i; j++){
+               if(a[j] > a[j+1]){
+                   int t = a[j];
+                   a[j]= a[j+1];
+                   a[j+1]= t;
+               }
+
+           }
+       }
+       for(int i=0; i<a.length;i++){
+           System.out.print(a[i] + " ");
+       }
+
+ }
+
+
 }
 
 
