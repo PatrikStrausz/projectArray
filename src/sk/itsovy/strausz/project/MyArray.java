@@ -189,14 +189,17 @@ public class MyArray implements ArrayMethods{
 
     @Override
     public void addItem(int newValue) {
-        int[] array2 = {newValue};
-        int[] array = new int[arr.length + array2.length];
-        System.arraycopy(arr, 0, array, 0, arr.length);
-        System.arraycopy(array2, 0, array, arr.length, array2.length);
+int [] array = new int [size+1];
+array[size] = newValue;
 
-        for(int i=0; i<array.length;i++) {
-            System.out.print(array[i] +  " " );
-        }
+ for(int i=0;i<size;i++){
+    array[i]=arr[i];
+}
+
+for(int i=0;i<array.length;i++){
+    System.out.print(array[i]+ " ");
+}
+
     }
 
     @Override
