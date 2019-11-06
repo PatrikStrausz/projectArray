@@ -19,11 +19,12 @@ public class Main {
 //        System.out.println(arr.countOfEvenValues());
 //        arr.sort(true);
 //        arr.sort(false);
-        arr.copy();
+//        arr.copy();
 
-//        arr.addItem(10);
-//
-//        arr.addItem(99,5);
+//        arr.addItem(10,2);
+
+        //arr.addItem(99,1);
+
 
 
 

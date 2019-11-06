@@ -194,30 +194,14 @@ public class MyArray implements ArrayMethods{
         System.arraycopy(arr, 0, array, 0, arr.length);
         System.arraycopy(array2, 0, array, arr.length, array2.length);
 
-
-
-
         for(int i=0; i<array.length;i++) {
-           System.out.print(array[i] +  " " );
-       }
-
-
+            System.out.print(array[i] +  " " );
+        }
     }
 
     @Override
     public void addItem(int newValue, int position) {
 
-        int[] array2 = {newValue};
-        int[] array = new int[arr.length + array2.length];
-        System.arraycopy(arr, 0, array, 0, arr.length);
-        System.arraycopy(array2, 0, array, arr.length, array2.length);
-
-
-
-
-        for(int i=0; i<array.length;i++) {
-            System.out.print(array[i] +  " " );
-        }
 
 
     }
@@ -235,11 +219,13 @@ public class MyArray implements ArrayMethods{
 
     @Override
     public int getItem(int position) {
-        return 0;
+
+      return arr[position];
     }
 
     @Override
     public String toString (){
-      return "s";
+
+      return " j" ;
     }
 }
