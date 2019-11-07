@@ -23,7 +23,7 @@ public class Main {
 
 // arr.addItem(10);
 
-        arr.addItem(99,1);
+        arr.addItem(99,0);
 
 
 
