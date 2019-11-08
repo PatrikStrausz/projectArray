@@ -34,6 +34,7 @@ public interface ArrayMethods {
 
     public int getItem(int position);
 
+   public void reverse();
 
-
+   public void randomize();
 }

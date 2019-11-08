@@ -256,8 +256,45 @@ public class MyArray implements ArrayMethods {
     }
 
     @Override
+    public void reverse() {
+         int reverse[]= new int [size];
+        int n = arr.length;
+        for(int i =0; i<size;i++) {
+            reverse[n-1] = arr[i];
+            n= n-1;
+        }
+
+        /*for(int i=0; i<size/2;i++){
+        int temp= arr[i];
+        arr[i]=arr[size-1-i];
+        arr[size-1-i] = temp;
+        }
+        */
+        for (int i=0; i<size;i++){
+            System.out.print(reverse[i] + " ");
+        }
+    }
+
+    @Override
+    public void randomize() {
+        Random rnd = new Random();
+        for(int i=0;i<2*size;i++){
+            int index1 = rnd.nextInt(size);
+            int index2 = rnd.nextInt(size);
+            int temp = arr[index1];
+            arr[index1]= arr[index2];
+            arr[index2]= temp;
+        }
+        for(int value:arr){
+            System.out.print(value + " ");
+        }
+    }
+
+
+    @Override
     public String toString() {
 
-        return " j";
+        return " ";
     }
+
 }
