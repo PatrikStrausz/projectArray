@@ -126,87 +126,133 @@ public class Main {
 //        System.out.println();
 //         System.out.println("Sum is: " +sum2);
 
-        int[][] ticTacToe = {{1, 0, 2}, {0, 1, 2}, {0, 2, 0}};
+//        int[][] ticTacToe = {{1, 0, 2}, {0, 1, 2}, {0, 2, 0}};
+//
+//
+//        for (int i = 0; i < ticTacToe.length; i++) {
+//            for (int j = 0; j < ticTacToe.length; j++) {
+//
+//                System.out.print(ticTacToe[i][j] + " ");
+//            }
+//
+//            System.out.println();
+//        }
 
 
-        for (int i = 0; i < ticTacToe.length; i++) {
-            for (int j = 0; j < ticTacToe.length; j++) {
+//        for (int i = 0; i < 3; i++) {
+//            int temp = 1;
+//            for (int j = 0; j < 3; j++) {
+//                temp *= ticTacToe[i][j];
+//                if (temp == 1) {
+//                    System.out.println("Player one won.");
+//                    break;
+//                } else if (temp == 8) {
+//                    System.out.println("Player two won.");
+//                    break;
+//                } else if (temp == 0) {
+//                    System.out.println("Draw");
+//                    break;
+//                }
+//            }
+//        }
+//
+//        for (int i = 0; i < 3; i++) {
+//            int temp = 1;
+//            for (int j = 0; j < 3; j++) {
+//                temp *= ticTacToe[j][i];
+//
+//                if (temp == 1) {
+//                    System.out.println("Player one won.");
+//                    break;
+//                } else if (temp == 8) {
+//                    System.out.println("Player two won.");
+//                    break;
+//                } else if (temp == 0) {
+//                    System.out.println("No one won");
+//                    break;
+//                }
+//            }
+//        }
+//        for (int i = 0; i < 3; i++) {
+//            int temp = 1;
+//
+//            temp *= ticTacToe[i][i];
+//
+//            if (temp == 1) {
+//                System.out.println("Player one won.");
+//                break;
+//            } else if (temp == 8) {
+//                System.out.println("Player two won.");
+//                break;
+//            } else if (temp == 0) {
+//                System.out.println("No one won");
+//                break;
+//            }
+//
+//        }
+//
+//        for (int j = 0; j < 3; j++) {
+//            int temp = 1;
+//            temp *= ticTacToe[j][j];
+//
+//            if (temp == 1) {
+//                System.out.println("Player one won.");
+//                break;
+//            } else if (temp == 8) {
+//                System.out.println("Player two won.");
+//                break;
+//            } else if (temp == 0) {
+//                System.out.println("No one won");
+//                break;
+//            }
+//        }
 
-                System.out.print(ticTacToe[i][j] + " ");
+        Random rnd = new Random();
+        int [] [] a = new int  [4] [4];
+        int [] [] b = new int  [4] [4];
+
+        for(int i=0;i<4; i++) {
+            for (int j = 0; j < 4; j++) {
+                a[i][j] = rnd.nextInt(90)+10;
+                b[i][j] = rnd.nextInt(90)+10;
             }
 
+        }
+
+        for(int i=0;i<4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(a[i][j] + " " );
+
+            }
             System.out.println();
+
+        }
+        System.out.println();
+
+        for(int i=0;i<4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(b[i][j] + " " );
+
+            }
+            System.out.println();
+
         }
 
+        System.out.println();
 
-        for (int i = 0; i < 3; i++) {
-            int temp = 1;
-            for (int j = 0; j < 3; j++) {
-                temp *= ticTacToe[i][j];
-                if (temp == 1) {
-                    System.out.println("Player one won.");
-                    break;
-                } else if (temp == 8) {
-                    System.out.println("Player two won.");
-                    break;
-                } else if (temp == 0) {
-                    System.out.println("Draw");
-                    break;
-                }
+        int  [] [] sum = new int[4][4];
+        for(int i=0; i<4; i++){
+            for(int j = 0; j<4; j++){
+                sum [i] [j] = a[i] [j] + b [i] [j]; // spocita hodnoty poli na rovnakej pozicii 
             }
         }
 
-        for (int i = 0; i < 3; i++) {
-            int temp = 1;
-            for (int j = 0; j < 3; j++) {
-                temp *= ticTacToe[j][i];
-
-                if (temp == 1) {
-                    System.out.println("Player one won.");
-                    break;
-                } else if (temp == 8) {
-                    System.out.println("Player two won.");
-                    break;
-                } else if (temp == 0) {
-                    System.out.println("No one won");
-                    break;
-                }
+        for(int i=0; i<4; i++){
+            for(int j = 0; j<4; j++) {
+                System.out.print(sum[i] [j] + " ");
+             }
+            System.out.println( );
             }
-        }
-        for (int i = 0; i < 3; i++) {
-            int temp = 1;
-
-            temp *= ticTacToe[i][i];
-
-            if (temp == 1) {
-                System.out.println("Player one won.");
-                break;
-            } else if (temp == 8) {
-                System.out.println("Player two won.");
-                break;
-            } else if (temp == 0) {
-                System.out.println("No one won");
-                break;
-            }
-
-        }
-
-        for (int j = 0; j < 3; j++) {
-            int temp = 1;
-            temp *= ticTacToe[j][j];
-
-            if (temp == 1) {
-                System.out.println("Player one won.");
-                break;
-            } else if (temp == 8) {
-                System.out.println("Player two won.");
-                break;
-            } else if (temp == 0) {
-                System.out.println("No one won");
-                break;
-            }
-        }
-
 
     }
 }
