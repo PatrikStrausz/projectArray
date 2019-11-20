@@ -243,7 +243,7 @@ public class Main {
         int  [] [] sum = new int[4][4];
         for(int i=0; i<4; i++){
             for(int j = 0; j<4; j++){
-                sum [i] [j] = a[i] [j] + b [i] [j]; // spocita hodnoty poli na rovnakej pozicii 
+                sum [i] [j] = a[i] [j] + b [i] [j]; // spocita hodnoty dvoch poli
             }
         }
 
@@ -253,6 +253,27 @@ public class Main {
              }
             System.out.println( );
             }
+        
+        
+         int [][] result = new int[a.length][b[0].length];
+
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b[0].length; j++) {
+                for (int k = 0; k < a[0].length; k++) { // nasobenie dvoch poli
+                    result[i][j] += a[i][k] * b[k][j];
+
+                }
+            }
+        }
+
+
+        for(int i = 0; i<4; i++){
+            for(int j= 0; j<4; j++){
+                System.out.print(result[i][j] + " ");  
+            }
+            System.out.println();
+        }
 
     }
 }
