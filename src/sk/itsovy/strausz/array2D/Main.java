@@ -207,75 +207,137 @@ public class Main {
 //            }
 //        }
 
-        Random rnd = new Random();
-        int [] [] a = new int  [4] [4];
-        int [] [] b = new int  [4] [4];
+//        Random rnd = new Random();
+//        int [] [] a = new int  [4] [4];
+//        int [] [] b = new int  [4] [4];
+//
+//        for(int i=0;i<4; i++) {
+//            for (int j = 0; j < 4; j++) {
+//                a[i][j] = rnd.nextInt(10);
+//                b[i][j] = rnd.nextInt(10);
+//            }
+//
+//        }
+//
+//        for(int i=0;i<4; i++) {
+//            for (int j = 0; j < 4; j++) {
+//                System.out.print(a[i][j] + " " );
+//
+//            }
+//            System.out.println();
+//
+//        }
+//        System.out.println();
+//
+//        for(int i=0;i<4; i++) {
+//            for (int j = 0; j < 4; j++) {
+//                System.out.print(b[i][j] + " " );
+//
+//            }
+//            System.out.println();
+//
+//        }
+//
+//        System.out.println();
+//
+//        int  [] [] sum = new int[4][4];
+//        for(int i=0; i<4; i++){
+//            for(int j = 0; j<4; j++){
+//                sum [i] [j] = a[i] [j] + b [i] [j]; // spocita hodnoty poli na rovnakej pozicii
+//            }
+//        }
+//
+//        for(int i=0; i<4; i++){
+//            for(int j = 0; j<4; j++) {
+//
+//                if(sum[i] [j] < 10){
+//                    System.out.print(" ");
+//                }
+//                System.out.print(sum[i] [j] + " ");
+//             }
+//            System.out.println( );
+//            }
+//
+//        System.out.println();
+//
+//        int [][] result = new int[a.length][b[0].length];
+//
+//
+//        for (int i = 0; i < a.length; i++) {
+//            for (int j = 0; j < b[0].length; j++) {
+//                for (int k = 0; k < a[0].length; k++) { // nasobenie dvoch poli
+//
+//
+//                    result[i][j] += a[i][k] * b[k][j];
+//
+//                }
+//            }
+//        }
+//
+//
+//        for(int i = 0; i<result.length; i++){
+//            for(int j= 0; j<result.length; j++){
+//                if(result[i] [j] < 100){
+//                    System.out.print(" ");
+//                }
+//                System.out.print(result[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
 
-        for(int i=0;i<4; i++) {
-            for (int j = 0; j < 4; j++) {
-                a[i][j] = rnd.nextInt(90)+10;
-                b[i][j] = rnd.nextInt(90)+10;
-            }
-
-        }
-
-        for(int i=0;i<4; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(a[i][j] + " " );
-
-            }
-            System.out.println();
-
-        }
-        System.out.println();
-
-        for(int i=0;i<4; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(b[i][j] + " " );
-
-            }
-            System.out.println();
-
-        }
-
-        System.out.println();
-
-        int  [] [] sum = new int[4][4];
-        for(int i=0; i<4; i++){
-            for(int j = 0; j<4; j++){
-                sum [i] [j] = a[i] [j] + b [i] [j]; // spocita hodnoty dvoch poli
-            }
-        }
-
-        for(int i=0; i<4; i++){
-            for(int j = 0; j<4; j++) {
-                System.out.print(sum[i] [j] + " ");
-             }
-            System.out.println( );
-            }
+        System.out.println(stateDiagram("ratrak"));
         
-        
-         int [][] result = new int[a.length][b[0].length];
+    }
+
+    public static boolean stateDiagram(String text) {
+        text = "kosiceradiosmeratracovradvlradvlratrakciapes";
+        int state = 0;
+        int i = 0;
 
 
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b[0].length; j++) {
-                for (int k = 0; k < a[0].length; k++) { // nasobenie dvoch poli
-                    result[i][j] += a[i][k] * b[k][j];
-
-                }
+        while (state != 6) {
+            if (i == text.length()) {         // najde v texte slovo ratrak
+                break;
             }
+            char z = text.charAt(i);
+            i++;
+            if (state == 0 && z == 'r') {
+                state = 1;
+
+            } else if (state == 1 && z == 'a') {
+                state = 2;
+            } else if (state == 1 && z == 'r') {
+                state = 1;
+            } else if (state == 2 && z == 't') {
+                state = 3;
+            } else if (state == 2 && z == 'r') {
+                state = 1;
+            } else if (state == 3 && z == 'r') {
+                state = 4;
+            } else if (state == 4 && z == 'a') {
+                state = 5;
+            } else if (state == 4 && z == 'r') {
+                state = 1;
+            } else if (state == 5 && z == 'k') {
+                state = 6;
+            } else if (state == 5 && z == 'r') {
+                state = 1;
+            } else
+                state = 0;
+
+
+
         }
 
-
-        for(int i = 0; i<4; i++){
-            for(int j= 0; j<4; j++){
-                System.out.print(result[i][j] + " ");  
-            }
-            System.out.println();
+        if (state == 6) {
+            return true;
         }
+        return false;
+
 
     }
+
+
 }
 
 
