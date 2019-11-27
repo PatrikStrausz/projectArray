@@ -286,7 +286,7 @@ public class Main {
 //        }
 
         System.out.println(stateDiagram("ratrak"));
-        
+
     }
 
     public static boolean stateDiagram(String text) {
